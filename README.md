@@ -31,4 +31,4 @@ To generate a zip with production ready application, run :
 
 Update application name on deploy.sh then run :
 
-    ./deploy.sh
+    ./deploy.sh# Organisation-chart-Web
