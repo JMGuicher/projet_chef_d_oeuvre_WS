@@ -1,22 +1,22 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {AppSharedModule} from '../shared';
-import {AppListContributorModule} from '../list-contributors/list-contributors.module';
 
-import {HOME_ROUTE, HomeComponent} from './';
+import {AppSharedModule} from '../shared';
+
+import {JobComponent} from './job.component';
+import {JOB_ROUTE} from './job.route';
 
 @NgModule({
     imports: [
         AppSharedModule,
-        AppListContributorModule,
-        RouterModule.forChild([HOME_ROUTE])
+        RouterModule.forChild([JOB_ROUTE])
     ],
     declarations: [
-        HomeComponent,
+        JobComponent,
     ],
     entryComponents: [],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppHomeModule {
+export class AppJobModule {
 }
