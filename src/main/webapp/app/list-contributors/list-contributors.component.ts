@@ -12,8 +12,14 @@ export class ListContributorsComponent implements OnInit {
 
     displayedColumns = ['Firstname', 'Lastname', 'UID'];
 
-    contributors: Contributor[] = [{lastName: 'truc', firstName: 'machin', uid: 'A2123'},
-        {lastName: 'Gabi', firstName: 'Gaboche', uid: 'G2435'}
+    contributors: Contributor[] = [{id: '1', lastName: 'truc', firstName: 'machin', uid: 'A2123'},
+        {id: '2', lastName: 'Gabi', firstName: 'Gaboche', uid: 'G2435'},
+        {id: '3', lastName: 'Pierre', firstName: 'Curie', uid: 'AS453'},
+        {id: '4', lastName: 'Marie', firstName: 'Curie', uid: 'BR987'},
+        {id: '5', lastName: 'Calvin', firstName: 'Clain', uid: '87654'},
+        {id: '6', lastName: 'Jacquou', firstName: 'Chiracou', uid: '76454'},
+        {id: '7', lastName: 'Pierre', firstName: 'Bellemaire', uid: '09871'},
+        {id: '8', lastName: 'Claire', firstName: 'Chazoulle', uid: 'G29075'},
     ];
 
     constructor(private contributorService: ContributorService) {
