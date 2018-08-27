@@ -1,4 +1,4 @@
-<div>
+<div class="listOfContributors">
     <h1> List of Contributors </h1>
 
     <div class="table-responsive" *ngIf="contributors">
@@ -14,13 +14,53 @@
             <tbody>
             <tr *ngFor="let contributor of contributors">
                 <th scope="row">{{contributor.id}}</th>
-                <td>{{contributor.firstName}}</td>
-                <td>{{contributor.lastName}}</td>
+                <td>{{contributor.firstname}}</td>
+                <td>{{contributor.lastname}}</td>
                 <td>{{contributor.uid}}</td>
+                <td>
+                    <button>delete</button>
+                </td>
             </tr>
+
+
             </tbody>
         </table>
 
     </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

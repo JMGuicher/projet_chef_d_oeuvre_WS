@@ -13,7 +13,6 @@ import {AppEntityModule} from './entities/entity.module';
 import {customHttpProvider} from './blocks/interceptor/http.provider';
 import {PaginationConfig} from './blocks/config/uib-pagination.config';
 import {AppJobModule} from './job/job.module';
-import {AppListContributorModule} from './list-contributors/list-contributors.module';
 import {ContributorService} from './shared/contributor/contributor.service';
 
 import {
@@ -25,6 +24,8 @@ import {
     PageRibbonComponent,
     ProfileService,
 } from './layouts';
+import {HttpClientModule} from "@angular/common/http";
+import { NewContributorComponent } from './new-contributor/new-contributor.component';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
@@ -39,7 +40,7 @@ import {
         AppAccountModule,
         AppEntityModule,
         AppJobModule,
-        AppListContributorModule,
+        HttpClientModule,
 
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
@@ -49,7 +50,8 @@ import {
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,
-        FooterComponent
+        FooterComponent,
+        NewContributorComponent
 
     ],
     providers: [
