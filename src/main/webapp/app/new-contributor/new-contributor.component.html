@@ -1,20 +1,10 @@
-<!--<form class="create-contributors">
-    <mat-form-field class="profile">
-        <input matInput placeholder="UID of collaborater">
-    </mat-form-field>
+<div class='new-contributor'>
+    FIRSTNAME : <input [(ngModel)]='newContributor.firstname'/>
+    LASTNAME: <input [(ngModel)]='newContributor.lastname'/>
+    UID : <input [(ngModel)]='newContributor.uid'/>
 
-    <mat-form-field class="profile">
-        <input matInput type="text" placeholder="Firstname of collaborater">
-    </mat-form-field>
+    <button type='button' name='button' (click)="addContributors()">Add a new contributor</button>
+</div>
 
-    <mat-form-field class="profile">
-        <input matInput type="text" placeholder="Lastname of collaborater">
-    </mat-form-field>
 
-    <mat-form-field class="profile">
-        <textarea matInput type="text" placeholder="Comments"></textarea>
-    </mat-form-field>
 
-</form> -->
-
-<button class="validate" (click)="create()"> CREATE</button>

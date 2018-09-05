@@ -2,38 +2,26 @@
     <h1> List of Contributors </h1>
 
     <div class="table-responsive" *ngIf="contributors">
-        <table class="table table-striped">
+        <table class="table of contributors">
             <thead>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Firstname</th>
                 <th scope="col">Lastname</th>
                 <th scope="col">UID</th>
             </tr>
             </thead>
+
             <tbody>
             <tr *ngFor="let contributor of contributors">
-                <th scope="row">{{contributor.id}}</th>
                 <td>{{contributor.firstname}}</td>
                 <td>{{contributor.lastname}}</td>
                 <td>{{contributor.uid}}</td>
-                <td>
-                    <button>delete</button>
-                </td>
             </tr>
-
-
             </tbody>
         </table>
-
     </div>
-
+    
 </div>
-
-
-
-
-
 
 
 

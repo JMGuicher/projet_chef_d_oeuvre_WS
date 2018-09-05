@@ -25,7 +25,6 @@ import {
     ProfileService,
 } from './layouts';
 import {HttpClientModule} from "@angular/common/http";
-import { NewContributorComponent } from './new-contributor/new-contributor.component';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
@@ -50,8 +49,7 @@ import { NewContributorComponent } from './new-contributor/new-contributor.compo
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,
-        FooterComponent,
-        NewContributorComponent
+        FooterComponent
 
     ],
     providers: [

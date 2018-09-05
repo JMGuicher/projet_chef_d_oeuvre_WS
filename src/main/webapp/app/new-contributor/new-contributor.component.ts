@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {ContributorService} from '../shared/contributor/contributor.service';
+import {Contributor} from "../shared/contributor/contributor.model";
 
 @Component({
     selector: 'jhi-new-contributor',
@@ -7,18 +8,32 @@ import {HttpClient} from '@angular/common/http';
     styles: []
 })
 export class NewContributorComponent implements OnInit {
+    newContributor = new Contributor();
 
-    constructor(private http: HttpClient) {
+    constructor(private contributorService: ContributorService) {
+
     }
 
     ngOnInit() {
     }
 
+    addContributors() {
+
+        if (this.newContributor.firstname && this.newContributor.lastname && this.newContributor.uid) {
+
+            this.contributorService.addContributors(this.newContributor);
+            this.newContributor = new Contributor();
+        }
+
+        else {
+            alert('Thanks to complete all the values.')
+        }
+
+        /*
     create() {
         // eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfV
         // VNFUiIsImV4cCI6MTUzNTQ1MTE4NH0.F63TSxa3QNpWPwMwKUnl7Wchsrh4-sLlPULEX7Q1ZP1DMXBfW_De
         // myN2rr7Wvfn278t--CVmi1YQgeO3zyS7nA
-        console.log('dsdssd')
         /*
         this.http.get('http://localhost:9000/api/contrib/contributors', {
             headers: {
