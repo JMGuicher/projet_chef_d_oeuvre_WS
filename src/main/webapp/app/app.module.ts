@@ -14,6 +14,7 @@ import {customHttpProvider} from './blocks/interceptor/http.provider';
 import {PaginationConfig} from './blocks/config/uib-pagination.config';
 import {AppJobModule} from './job/job.module';
 import {ContributorService} from './shared/contributor/contributor.service';
+import {JobService} from './shared/job/job.service';
 
 import {
     ActiveMenuDirective,
@@ -57,7 +58,8 @@ import {HttpClientModule} from "@angular/common/http";
         customHttpProvider(),
         PaginationConfig,
         UserRouteAccessService,
-        ContributorService
+        ContributorService,
+        JobService,
     ],
     bootstrap: [JhiMainComponent]
 })

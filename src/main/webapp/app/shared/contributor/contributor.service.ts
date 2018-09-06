@@ -16,7 +16,7 @@ export class ContributorService {
     addContributors(contributor: Contributor) {
         CONTRIBUTORS.push(contributor);
     }
-    
+
     /*getPage(page: number): Observable<Contributor[]> {
         return this.getPage<Contributor[]>(1);
     }*/
