@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     }
 
     registerAuthenticationSuccess() {
-        console.log("sds")
+        console.log('sds')
         this.eventManager.subscribe('authenticationSuccess', (message) => {
             this.principal.identity().then((account) => {
                 this.account = account;

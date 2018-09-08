@@ -20,6 +20,10 @@ export class ListContributorsComponent implements OnInit {
 
     }
 
+    deleteContributor(contributor: Contributor) {
+        this.contributorService.deleteContributor(contributor);
+    }
+
 
     /*displayContributors() {
         this.contributorService.getPage(pageXOffset).subscribe((listContributors) => {

@@ -1,21 +1,46 @@
 <div class='new-contributor'>
-    FIRSTNAME : <input [(ngModel)]='newContributor.firstname'/>
-    LASTNAME: <input [(ngModel)]='newContributor.lastname'/>
-    UID : <input [(ngModel)]='newContributor.uid'/>
 
+    <div class="col-md-3">
+        <span class="hipster img-fluid rounded"></span>
+    </div>
 
-    <button type='button' name='button' (click)="addContributors()" *ngIf="'Contributors'">Add a new contributor
-    </button>
-</div>
-<br>
+    <h2>ADD A NEW CONTRIBUTOR</h2>
 
-<div class='job-contributor'>
-    <form>
-        <SELECT name="Job" size="1">
-            <option value="0">--List of jobs--</option>
-            <option *ngFor="let job of jobs" value={{job.id}}>{{job.name}}</option>
-        </SELECT>
-    </form>
+    <div class='contributor-identity'>
+        <h3>The identity of the contributor:</h3>
+        UID : <input [(ngModel)]='newContributor.uid'/> <br>
+        FIRSTNAME : <input [(ngModel)]='newContributor.firstname'/> <br>
+        LASTNAME : <input [(ngModel)]='newContributor.lastname'/> <br>
+        <br>
+        <br>
+    </div>
+
+    <div class='job-contributor'>
+        <h3>The job of the contributor</h3>
+        <form>
+            <SELECT name="Job" size="1">
+                <option value="0">--Select job--</option>
+                <option *ngFor="let job of jobs" value={{job.id}}>{{job.name}}</option>
+            </SELECT>
+        </form>
+    </div>
+    <br>
+
+    <br>
+    <div class='comment'>
+        <h3>Comments:</h3>
+        <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Leave a comment"></textarea>
+        </mat-form-field>
+    </div>
+
+    <br>
+    <div class='validation'>
+        <h3>Validation:</h3>
+        <button name='button' (click)='addContributors()'>Add the contributor
+        </button>
+    </div>
+
 </div>
 
 

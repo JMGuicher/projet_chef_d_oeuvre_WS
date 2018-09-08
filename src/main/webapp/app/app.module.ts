@@ -3,6 +3,7 @@ import './vendor.ts';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {Ng2Webstorage} from 'ngx-webstorage';
+import {RouterModule, Routes} from '@angular/router';
 
 import {AppSharedModule, UserRouteAccessService} from './shared';
 import {AppAppRoutingModule} from './app-routing.module';
@@ -15,6 +16,8 @@ import {PaginationConfig} from './blocks/config/uib-pagination.config';
 import {AppJobModule} from './job/job.module';
 import {ContributorService} from './shared/contributor/contributor.service';
 import {JobService} from './shared/job/job.service';
+import {NewContributorComponent} from './new-contributor/new-contributor.component';
+
 
 import {
     ActiveMenuDirective,
@@ -25,9 +28,15 @@ import {
     PageRibbonComponent,
     ProfileService,
 } from './layouts';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
+import {EditContributorComponent} from './edit-contributor/edit-contributor.component';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
+
+const routes: Routes = [
+    {path: 'new-contributor', component: NewContributorComponent},
+    {path: 'edit-contributor/:id', component: EditContributorComponent},
+];
 
 @NgModule({
     imports: [
@@ -41,6 +50,7 @@ import {HttpClientModule} from "@angular/common/http";
         AppEntityModule,
         AppJobModule,
         HttpClientModule,
+        RouterModule.forRoot(routes),
 
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
@@ -50,7 +60,7 @@ import {HttpClientModule} from "@angular/common/http";
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,
-        FooterComponent
+        FooterComponent,
 
     ],
     providers: [

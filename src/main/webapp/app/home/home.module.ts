@@ -5,6 +5,7 @@ import {AppSharedModule} from '../shared';
 import {HOME_ROUTE, HomeComponent} from './';
 import {ListContributorsComponent} from '../list-contributors/list-contributors.component';
 import {NewContributorComponent} from '../new-contributor/new-contributor.component';
+import {EditContributorComponent} from "../edit-contributor/edit-contributor.component";
 
 @NgModule({
     imports: [
@@ -14,7 +15,9 @@ import {NewContributorComponent} from '../new-contributor/new-contributor.compon
     declarations: [
         HomeComponent,
         ListContributorsComponent,
-        NewContributorComponent
+        NewContributorComponent,
+        EditContributorComponent,
+
     ],
     entryComponents: [],
     providers: [],

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {SERVER_API_URL} from '../../app.constants';
-import {JOB} from "../mock-job";
+import {JOB} from '../mock-job';
 
 import {Http} from '@angular/http';
 import {Job} from './job.model';

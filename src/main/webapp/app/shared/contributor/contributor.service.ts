@@ -17,6 +17,28 @@ export class ContributorService {
         CONTRIBUTORS.push(contributor);
     }
 
+    deleteContributor(contributor: Contributor) {
+        var index = CONTRIBUTORS.indexOf(contributor, 0);
+        if (index > -1) {
+            CONTRIBUTORS.splice(index, 1);
+        }
+    }
+
+    getContributorById(id: number): Contributor {
+
+        for (let i = 0; i < CONTRIBUTORS.length; i++) {
+            if (id == CONTRIBUTORS[i].id) {
+                return CONTRIBUTORS[i];
+            }
+        }
+    }
+
+    /*
+          var index = CONTRIBUTORS.indexOf(contributor, 0);
+            if (index > -1) {
+                CONTRIBUTORS.splice(index, 1);
+            }
+     */
     /*getPage(page: number): Observable<Contributor[]> {
         return this.getPage<Contributor[]>(1);
     }*/
