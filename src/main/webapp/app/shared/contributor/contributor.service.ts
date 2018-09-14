@@ -1,27 +1,25 @@
 import {Injectable} from '@angular/core';
 
 import {Contributor} from './contributor.model';
-import {SERVER_API_URL} from '../../app.constants';
-import {Http} from '@angular/http';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 import {CONTRIBUTORS} from '../../mock-contributors';
 
 @Injectable()
 export class ContributorService {
-    private resourceUrl = SERVER_API_URL + 'api/users';
+    // private resourceUrl = SERVER_API_URL + 'api/contributors';
+    API_URL = 'http://localhost:8080/api/contrib/contributors';
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
 
+    }
+
+    getContributors(): Observable<Contributor[]> {
+        return this.http.get<Contributor[]>(this.API_URL);
     }
 
     addContributors(contributor: Contributor) {
         CONTRIBUTORS.push(contributor);
-    }
-
-    deleteContributor(contributor: Contributor) {
-        var index = CONTRIBUTORS.indexOf(contributor, 0);
-        if (index > -1) {
-            CONTRIBUTORS.splice(index, 1);
-        }
     }
 
     getContributorById(id: number): Contributor {
@@ -31,15 +29,23 @@ export class ContributorService {
                 return CONTRIBUTORS[i];
             }
         }
+
     }
 
-    /*
-          var index = CONTRIBUTORS.indexOf(contributor, 0);
-            if (index > -1) {
-                CONTRIBUTORS.splice(index, 1);
-            }
-     */
-    /*getPage(page: number): Observable<Contributor[]> {
-        return this.getPage<Contributor[]>(1);
-    }*/
+    deleteContributor(deletedContributor: Contributor): Observable<Contributor> {
+        return this.http.delete<Contributor>(this.API_URL);
+    }
+
+    createContributor(contributor: Contributor): Observable<Contributor> {
+        return this.http.post<Contributor>(this.API_URL, contributor);
+    }
+
+
 }
+
+/*  deleteContributor(contributor: Contributor) {
+        var index = CONTRIBUTORS.indexOf(contributor, 0);
+        if (index > -1) {
+            CONTRIBUTORS.splice(index, 1);
+        }
+    }*/

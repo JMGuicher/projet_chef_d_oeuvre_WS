@@ -1,29 +1,28 @@
-<div class="listOfContributors">
+<div class='listOfContributors'>
     <h1> List of Contributors </h1>
 
-    <div class="table-responsive" *ngIf='contributors'>
+    <div class='table-responsive' *ngIf='contributors'>
         <table class="table of contributors">
             <thead>
             <tr>
-                <th scope="col">Firstname</th>
-                <th scope="col">Lastname</th>
-                <th scope="col">UID</th>
+                <th scope='col'>Firstname</th>
+                <th scope='col'>Lastname</th>
+                <th scope='col'>UID</th>
             </tr>
             </thead>
 
             <tbody>
-            <tr *ngFor="let contributor of contributors">
+            <tr *ngFor='let contributor of contributors'>
                 <td>{{contributor.firstname}}</td>
                 <td>{{contributor.lastname}}</td>
                 <td>{{contributor.uid}}</td>
                 <td>
-                    <button (click)="deleteContributor(contributor)">Delete</button>
+                    <button (click)='deleteContributor()'>Delete</button>
                 </td>
-
+                
                 <td>
                     <a [routerLink]="['/edit-contributor', contributor.id]">Edit</a>
                 </td>
-
             </tr>
 
             </tbody>
@@ -33,7 +32,6 @@
         <button>
             <a routerLink='/new-contributor'>Add a new-contributor</a>
         </button>
-
     </div>
 </div>
 

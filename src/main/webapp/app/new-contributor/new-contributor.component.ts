@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
     styleUrls: ['new-contributor.scss']
 })
 export class NewContributorComponent implements OnInit {
-    newContributor = new Contributor();
+    newContributor: Contributor = {id: null, firstname: '', lastname: '', uid: ''};
     jobs: Job[];
 
     constructor(private contributorService: ContributorService, private jobService: JobService, private router: Router) {
@@ -24,34 +24,20 @@ export class NewContributorComponent implements OnInit {
         console.log(this.jobs);
     }
 
-    addContributors() {
-
+    createContributor(uid: string, firstname: string, lastname: string) {
         if (this.newContributor.firstname && this.newContributor.lastname && this.newContributor.uid) {
-            this.newContributor.id = Math.random();
-            this.contributorService.addContributors(this.newContributor);
-            this.newContributor = new Contributor();
-            this.router.navigate(['/']);
+            //this.newContributor.id = Math.random();
+            this.contributorService.createContributor(this.newContributor).subscribe((newContributor) => {
+                console.log(newContributor);
+            });
+
         }
 
         else {
             alert('Please complete all the values.')
-
         }
-
     }
 
-    /*
-create() {
-    // eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfV
-    // VNFUiIsImV4cCI6MTUzNTQ1MTE4NH0.F63TSxa3QNpWPwMwKUnl7Wchsrh4-sLlPULEX7Q1ZP1DMXBfW_De
-    // myN2rr7Wvfn278t--CVmi1YQgeO3zyS7nA
-    /*
-    this.http.get('http://localhost:9000/api/contrib/contributors', {
-        headers: {
-            'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzNTQ1MTE4NH0.F63TSxa3QNpWPwMwKUnl7Wchsrh4-sLlPULEX7Q1ZP1DMXBfW_DemyN2rr7Wvfn278t--CVmi1YQgeO3zyS7nA'
-        }
-    }).subscribe((data: Any) => {
-    });
-    */
 
 }
+
