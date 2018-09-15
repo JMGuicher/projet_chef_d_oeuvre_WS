@@ -13,6 +13,7 @@ import {Router} from "@angular/router";
 export class NewContributorComponent implements OnInit {
     newContributor: Contributor = {id: null, firstname: '', lastname: '', uid: ''};
     jobs: Job[];
+    job: number = 4;
 
     constructor(private contributorService: ContributorService, private jobService: JobService, private router: Router) {
 

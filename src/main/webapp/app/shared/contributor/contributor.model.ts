@@ -1,6 +1,3 @@
-import {Job} from '../job/job.model';
-
-
 export class Contributor {
     public id?: any;
     public uid?: string;
@@ -10,7 +7,7 @@ export class Contributor {
     public createdDate?: Date;
     public lastModifiedBy?: string;
     public lastModifiedDate?: Date;
-    public job?: Job;
+    public job?: number;
 
     constructor(id?: any,
                 uid?: string,
@@ -20,7 +17,7 @@ export class Contributor {
                 createdDate?: Date,
                 lastModifiedBy?: string,
                 lastModifiedDate?: Date,
-                job?: Job) {
+                job?: number) {
         this.id = id ? id : null;
         this.uid = uid ? uid : null;
         this.firstname = firstName ? firstName : null;

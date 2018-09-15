@@ -17,15 +17,12 @@
 
     <div class='job-contributor'>
         <h3>The job of the contributor</h3>
-        <form>
-            <SELECT name="Job" size="1">
-                <option value="0">--Select job--</option>
-                <option *ngFor="let job of jobs" value={{job.id}}>{{job.name}}</option>
-            </SELECT>
-        </form>
+        <select size="1" [(ngModel)]="newContributor.job">
+            <option value="0">--Select job--</option>
+            <option *ngFor="let job of jobs" [ngValue]='job.id'>{{job.name}}</option>
+        </select>
     </div>
     <br>
-
     <br>
     <div class='comment'>
         <h3>Comments:</h3>

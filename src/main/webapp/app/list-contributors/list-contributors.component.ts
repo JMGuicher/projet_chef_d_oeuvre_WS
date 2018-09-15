@@ -10,7 +10,6 @@ import {Contributor} from "../shared/contributor/contributor.model";
 })
 export class ListContributorsComponent implements OnInit {
     //contributors = CONTRIBUTORS;
-    deletedContributor: Contributor = {id: null, lastname: '', firstname: ''};
 
     contributors: Contributor[] = new Array<Contributor>();
 
@@ -23,8 +22,9 @@ export class ListContributorsComponent implements OnInit {
     }
 
     deleteContributor(deletedContributor: Contributor) {
-        this.contributorService.deleteContributor(this.deletedContributor).subscribe((deletedContributor) => {
+        this.contributorService.deleteContributor(deletedContributor).subscribe((deletedContributor) => {
             console.log(deletedContributor);
+            this.getContributors();
         })
     }
 

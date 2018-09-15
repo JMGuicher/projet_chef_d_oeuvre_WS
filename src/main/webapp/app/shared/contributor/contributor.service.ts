@@ -33,7 +33,7 @@ export class ContributorService {
     }
 
     deleteContributor(deletedContributor: Contributor): Observable<Contributor> {
-        return this.http.delete<Contributor>(this.API_URL);
+        return this.http.delete(this.API_URL + '/' + deletedContributor.id);
     }
 
     createContributor(contributor: Contributor): Observable<Contributor> {

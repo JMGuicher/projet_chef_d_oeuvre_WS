@@ -1,7 +1,11 @@
 <div class='listOfContributors'>
     <h1> List of Contributors </h1>
 
-    <div class='table-responsive' *ngIf='contributors'>
+    <div class='table-empty' *ngIf='contributors.length==0'>
+        <h3>L'organigramme est vide.</h3>
+    </div>
+
+    <div class='table-responsive' *ngIf='contributors.length'>
         <table class="table of contributors">
             <thead>
             <tr>
@@ -17,9 +21,9 @@
                 <td>{{contributor.lastname}}</td>
                 <td>{{contributor.uid}}</td>
                 <td>
-                    <button (click)='deleteContributor()'>Delete</button>
+                    <button (click)='deleteContributor(contributor)'>Delete</button>
                 </td>
-                
+
                 <td>
                     <a [routerLink]="['/edit-contributor', contributor.id]">Edit</a>
                 </td>
